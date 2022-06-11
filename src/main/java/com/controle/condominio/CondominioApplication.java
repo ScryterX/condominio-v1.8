@@ -10,4 +10,5 @@ public class CondominioApplication {
 		SpringApplication.run(CondominioApplication.class, args);
 	}
 
+
 }
