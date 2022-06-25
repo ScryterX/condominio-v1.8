@@ -41,7 +41,7 @@ public class SecurityConfiguration{
 
         http.httpBasic().and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/parking-spot").hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET,"/parking-spot").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.GET,"/parking-spot/**").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.POST,"/parking-spot").hasRole("ADMIN")
                 .antMatchers(HttpMethod.PUT,"/parking-spot").hasRole("ADMIN")
