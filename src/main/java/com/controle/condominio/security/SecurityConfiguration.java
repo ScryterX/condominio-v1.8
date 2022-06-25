@@ -48,10 +48,10 @@ public class SecurityConfiguration{
                 .antMatchers(HttpMethod.DELETE,"/parking-spot").hasRole("ADMIN");
         return http.build();
     }
-    @Bean
+/*    @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().antMatchers(HttpMethod.GET,"/parking-spot","/exemplo");
-   }
+   }*/
 
     // create two users, admin and user
     @Autowired
