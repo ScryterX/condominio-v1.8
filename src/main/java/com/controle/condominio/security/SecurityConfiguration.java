@@ -39,7 +39,8 @@ public class SecurityConfiguration{
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 //        http.authorizeHttpRequests((authz) -> authz.anyRequest().authenticated()).httpBasic(withDefaults());
 
-        http.httpBasic().and()
+        http.cors().and().csrf().disable()
+                .httpBasic().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/parking-spot").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.GET,"/parking-spot/**").hasAnyRole("USER", "ADMIN")
@@ -48,10 +49,10 @@ public class SecurityConfiguration{
                 .antMatchers(HttpMethod.DELETE,"/parking-spot").hasRole("ADMIN");
         return http.build();
     }
-/*    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers(HttpMethod.GET,"/parking-spot","/exemplo");
-   }*/
+//    @Bean
+//    public WebSecurityCustomizer webSecurityCustomizer() {
+//        return (web) -> web.ignoring().antMatchers(HttpMethod.GET,"/parking-spot","/exemplo");
+//   }
 
     // create two users, admin and user
     @Autowired
