@@ -11,8 +11,8 @@ public class CondominioApplication {
 		SpringApplication.run(CondominioApplication.class, args);
 	}
 
-	@RequestMapping("/")
-	public String login(){
-		return "Index";
-	}
+//	@RequestMapping("/")
+//	public String login(){
+//		return "Index";
+//	}
 }
