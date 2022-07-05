@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2? family= Gloria+Hallelujah & display=swap');
+
+@font-face {
+    font-family: 'Discord';
+    src: url('fonts/unisans.otf') format('opentype'), url('fonts/unisans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'logoplexi';
+    src: url('fonts/logoplexi/logoplexi.otf') format('opentype'), url('fonts/logoplexi/logoplexi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'avantgarde';
+    src: url('fonts/avantgarde/avantgarde.otf') format('opentype'), url('fonts/avantgarde/avantgarde.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-size: 100%;
+    background: linear-gradient(68.15deg, #100380 16.62%, #1b2730 75.61%);
+}
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px;
+}
+.cabecalho_nome:hover{
+    font-family: 'avantgarde';
+    color:rgb(68, 68, 66);
+    
+}
+.cabecalho_nome{
+    font-family: 'avantgarde';
+    color:beige;
+    font-weight: 400;
+    font-size: 64px;
+}
+.cabecalho_imagem{
+    height: 75px;
+}
+.cabecalho_menu{
+    display: flex;
+    gap: 30px;
+}
+.cabecalho_menu_item{
+    font-family: 'Discord', cursiva;
+    color:beige;
+    font-weight: 400;
+    font-size: 18px;
+}
+.conteudo{
+    margin-bottom: 48px;
+    border-top: 0.4px solid beige;
+}
+.conteudo_principal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.conteudo_principal_escrito{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.conteudo_principal_titulo{
+    font-family: 'avantgarde';
+    color:beige;
+    font-weight: 400;
+    font-size: 64px;
+}
+.conteudo_principal_subtitulo{
+    font-family: 'logoplexi', cursiva;
+    color:beige;
+    font-weight: 400;
+    font-size: 24px;
+}
+.conteudo_principal_botao:hover 
+{
+     background-color: #000000; 
+     transition: 0.5s;
+     opacity: 0.7;
+}
+.conteudo_principal_botao{
+    background-color: #1b2730;
+    width: 200px;
+    height: 60px;
+    border: none;
+    box-shadow: 4px 5px 4px rgba(0,0,0,0.25);
+    border-radius: 20px;
+    font-family: 'Arial', cursiva;
+    font-size: 24px;
+    color: white
+}
+.conteudo_principal_imagem{
+    height: 210px;
+}
+.conteudo_secundario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
+}
+.conteudo_secundario_titulo{
+    border-top: 0.4px solid beige;
+    padding-top: 48px;
+    font-family: 'avantgarde', cursiva;
+    color:beige;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.conteudo_secundario_paragrafo{
+    font-family: 'Gloria Hallelujah', cursiva;
+    color:beige;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.rodape{
+    padding: 32px;
+    border-top: 0.4px solid beige;
+}
+.rodape_imagem{
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}
