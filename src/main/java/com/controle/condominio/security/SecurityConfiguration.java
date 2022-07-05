@@ -52,7 +52,7 @@ public class SecurityConfiguration{
     }
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers(HttpMethod.GET,"/resources/**");
+        return (web) -> web.ignoring().antMatchers(HttpMethod.GET,"/resources/**",  "/static/**", "/css/**", "/js/**", "/images/**","/vendor/**","/fonts/**");
    }
 
     // create two users, admin and user
