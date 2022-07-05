@@ -44,14 +44,15 @@ public class SecurityConfiguration{
 //        http.authorizeHttpRequests((authz) -> authz.anyRequest().authenticated()).httpBasic(withDefaults());
 
         http
-                .cors().and().csrf().disable()
+//                .cors().and().csrf().disable()
                 .httpBasic().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/parking-spot").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.GET,"/parking-spot/*").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.POST,"/parking-spot/*").hasRole("ADMIN")
                 .antMatchers(HttpMethod.PUT,"/parking-spot").hasRole("ADMIN")
-                .antMatchers(HttpMethod.DELETE,"/parking-spot").hasRole("ADMIN");
+                .antMatchers(HttpMethod.DELETE,"/parking-spot").hasRole("ADMIN")
+                .and().csrf().disable();
         return http.build();
     }
     @Bean
