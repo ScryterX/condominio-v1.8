@@ -2,21 +2,21 @@
 
 @font-face {
     font-family: 'Discord';
-    src: url('fonts/unisans.otf') format('opentype'), url('fonts/unisans.ttf') format('truetype');
+    src: url('../static/fonts/unisans.otf') format('opentype'), url('../static/fonts/unisans.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'logoplexi';
-    src: url('fonts/logoplexi/logoplexi.otf') format('opentype'), url('fonts/logoplexi/logoplexi.ttf') format('truetype');
+    src: url('../static/fonts/logoplexi/logoplexi.otf') format('opentype'), url('../static/fonts/logoplexi/logoplexi.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'avantgarde';
-    src: url('fonts/avantgarde/avantgarde.otf') format('opentype'), url('fonts/avantgarde/avantgarde.ttf') format('truetype');
+    src: url('../static/fonts/avantgarde/avantgarde.otf') format('opentype'), url('../static/fonts/avantgarde/avantgarde.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
