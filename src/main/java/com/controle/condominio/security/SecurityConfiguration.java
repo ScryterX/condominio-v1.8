@@ -46,7 +46,8 @@ public class SecurityConfiguration{
                 .antMatchers(HttpMethod.GET,"/parking-spot/**").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.POST,"/parking-spot").hasRole("ADMIN")
                 .antMatchers(HttpMethod.PUT,"/parking-spot").hasRole("ADMIN")
-                .antMatchers(HttpMethod.DELETE,"/parking-spot").hasRole("ADMIN");
+                .antMatchers(HttpMethod.DELETE,"/parking-spot").hasRole("ADMIN")
+                .and().authorizeRequests().antMatchers("/resources/**").permitAll().anyRequest().permitAll();;
         return http.build();
     }
     @Bean
