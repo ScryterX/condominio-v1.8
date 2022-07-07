@@ -1,108 +1,144 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="stylesheet" type="text/css" href="CSS/slideshow.css">
-    <script src="js/slideshow.js"></script>
-</head>
-<body>
-    <header class="cabecalho">
-        <a href="Index.html" class="cabecalho_nome">streamigos</a>
-        <nav class=" cabecalho_menu">
-            <a href = "https://trovo.live/team/Mira_Bambu" class=" cabecalho_menu_item">Mira Bambu</a>
-            <a href = "https://trovo.live/team/Streamigos" class=" cabecalho_menu_item">Streamigos</a>
-            <a href = "https://trovo.live/ScryterX"class=" cabecalho_menu_item">Trovo</a>
-            <a href = "https://twitch.tv/ScryterX" class=" cabecalho_menu_item">Twitch</a>
-            <a href = "https://discord.gg/sWG9dpCT3E" class=" cabecalho_menu_item">Discord</a>
-        </nav>
-    </header>
-<!-- aqui começa o conteúdo abaixo do cabeçalho da página-->
-<main class="conteudo">
-    <section class="conteudo_principal">
-        <img class="conteudo_principal_imagem"src="img/2.png" alt="Mira Bambu">
-        <div class="conteudo_principal_escrito">
-            <h2 class="conteudo_principal_subtitulo">Streamar junto é muito melhor, venha fazer parte do nosso time!</h2>
-            <a href="Contato_page"><button class="conteudo_principal_botao">Quero participar</button>
-        </div>
-        <img class="conteudo_principal_imagem"src="img/a.png" alt="Streamigos">
-    </section>
-    <br>
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta charset="UTF-8">
+		<title>Gerenciamento</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		
+	</head>
+	<body>
+	<p th:text="${mensagem}"></p>
+		<header>
+			<div class="container">
+				<h1 style="cursor: pointer" class="titulo">Gerenciamento de Condomínio</h1>
+			</div>
+		</header>
+	<main>
 
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 4</div>
-            <img src="img/slideshow/01.png" style="width:100%">
-            <div class="text">ThayMacGames</div>
-        </div>
+		<section class="container">
+			<h2 id="titulo-form">Adicionar novo inquilino</h2>
+			<ul id="mensagens-erro">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 
-        <div class="mySlides fade">
-        <div class="numbertext">2 / 4</div>
-        <img src="img/slideshow/02.PNG" style="width:100%">
-        <div class="text">Rochinha_X</div>
-    </div>
+			<form th:action="@{/post}" th:object="${registro}" method="post">
+				<!-- Nome --><div class="grupo">
+				<label for="nome">Nome:</label>
+				<input id="nome" type="text" value="" name="nome"
+						placeholder="digite o nome do inquilino"
+						class="campo">
+			</div>
+				<!-- Bloco --><div class="grupo">
+				<label for="block">Bloco:</label>
+				<input id="block" type="text" value="" name="block"
+					placeholder="digite o número do Bloco"
+					   class="campo campo-medio">
+			</div>
+				<!-- Apartamento --><div class="grupo">
+				<label for="apartment">Apartamento:</label>
+				<input id="apartment"
+					   type="text" value="" name="apartment"
+					   placeholder="digite o número do apartamento"
+					   class="campo campo-medio">
+			</div>
 
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 4</div>
-      <img src="img/slideshow/03.PNG" style="width:100%">
-      <div class="text">AmoraLih</div>
-    </div>
+				<!-- Vaga --><div class="grupo">
+				<label for="parkingSpotNumber">Vaga:</label>
+				<input id="parkingSpotNumber" type="text" value="" name="parkingSpotNumber"
+				placeholder="digite o número da Vaga"
+				class="campo campo-medio">
+			</div>
+				<!-- Marca --><div class="grupo">
+				<label for="brandCar">Marca:</label>
+				<input id="brandCar"
+					   name="brandCar"
+					   type="text"
 
-    <div class="mySlides fade">
-      <div class="numbertext">4 / 4</div>
-      <img src="img/slideshow/04.PNG" style="width:100%">
-      <div class="text">Queijadores</div>
-    </div>
+					   placeholder="digite a marca do Veículo"
+					   class="campo campo-medio">
+			</div>
+				<!-- Carro --><div class="grupo">
+				<label for="modelCar">Veículo:</label>
+				<input id="modelCar"
+					   name="modelCar"
+					   type="text"
 
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  <br>
+					   placeholder="digite o nome do Veículo"
+					   class="campo campo-medio">
+			</div>
+				<!-- Cor --><div class="grupo">
+				<label for="placa">Placa do Veículo:</label>
+				<input id="placa"
+					   type="text" value="" name="cor"
+					   placeholder="digite a placa do veículo"
+					   class="campo campo-medio">
+			</div>
+				<!-- Cor --><div class="grupo">
+				<label for="cor">Cor do Veículo:</label>
+				<input id="cor"
+					   type="text" value="" name="cor"
+					   placeholder="digite a cor do veículo"
+					   class="campo campo-medio">
+			</div>
+				<!-- Adicionar --><button type="submit"
+										  id="adicionar-paciente"
+										  class="botao bto-principal">Adicionar</button>
+			</form>
+		</section>
 
-  <!-- The dots/circles -->
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-  </div>
-</main>
-<footer>
-    <header class="rodape">
-        <center><img class="conteudo_principal_imagem"src="img/nicolas-cage-nicolas.gif" alt="Nicolas Cage valendo 10 horas"></center>
-    </header>
-</footer>
-<script>showSlides();</script>
-</body>
 
+		<section class="container">
+			<h2>Moradores</h2>
+			<label for="filtrar-tabela">Filtre:</label>
+			<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do inquilino">
+			<table>
+				<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Bloco</th>
+					<th>Número AP</th>
+					<th>Vaga de estacionamento</th>
+					<th>Marca</th>
+					<th>Veículo</th>
+					<th>Data de registro</th>
+					<th>Placa do veículo</th>
+					<th>Cor do veículo</th>
+					<th>     ID     </th>
+				</tr>
+				</thead>
+				<tbody id="tabela-pacientes">
+				<tr th:each="registro : ${registros}"  class="paciente" id="primeiroPaciente">
+					<td class="info-nome">[[${registro.resposibleName}]]</td>
+					<td class="info-bloco">[[${registro.block}]]</td>
+					<td class="info-ap">[[${registro.apartment}]]</td>
+					<td class="info-vaga">[[${registro.parkingSpotNumber}]]</td>
+					<td class="info-marca">[[${registro.brandCar}]]</td>
+					<td class="info-modelo">[[${registro.modelCar}]]</td>
+					<td class="info-modelo">[[${registro.licensePlateCar}]]</td>
+					<td class="info-data-registro">[[${registro.registrationDate}]]</td>
+					<td class="info-cor">[[${registro.colorCar}]]</td>
+					<td class="info-id">	[[${registro.id}]]	</td>
+
+				</tr>
+
+				</tbody>
+			</table>
+			<span id="erro-ajax" class="invisivel">Erro ao buscar inquilino</span>
+			<button id="buscar-pacientes" class="botao bto-principal">Buscar</button>
+		</section>
+	</main>
+
+
+
+		<script type="text/javascript" src="js/calcula-imc.js"></script>
+		<script type="text/javascript" src="js/form.js"></script>
+		<script type="text/javascript" src="js/remover-paciente.js"></script>
+		<script type="text/javascript" src="js/filtra.js"></script>
+		<script type="text/javascript" src="js/buscar-pacientes.js"></script>
+	</body>
 </html>
-
-<!--
-<!doctype html>
-<html lang="pt-br">
-<head>
-    &lt;!&ndash; Required meta tags &ndash;&gt;
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    &lt;!&ndash; Bootstrap CSS &ndash;&gt;
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-</head>
-<body>
-<h1>Hello, world!</h1>
-
-&lt;!&ndash; Optional JavaScript &ndash;&gt;
-&lt;!&ndash; jQuery first, then Popper.js, then Bootstrap JS &ndash;&gt;
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>-->
