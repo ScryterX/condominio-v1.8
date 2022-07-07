@@ -36,7 +36,5 @@ public class ParkingSpotModel {
     private String apartment;
     @Column(nullable = false, length = 30)
     private String block;
-    @Column(nullable = false, length = 30)
-    private String contato;
 
 }
