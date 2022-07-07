@@ -28,18 +28,19 @@ import javax.sql.DataSource;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
-@EnableWebSecurity
+//@EnableWebSecurity
 public class SecurityConfiguration{
 
     @Autowired
     UserDetailsService userDetailsService;
 
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 //        http.authorizeHttpRequests((authz) -> authz.anyRequest().authenticated()).httpBasic(withDefaults());
 
-        http.cors().and().csrf().disable()
+        http.cors().and()
+                .formLogin().loginPage("/login").permitAll().and()
+                .csrf().disable()
                 .httpBasic().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/parking-spot").hasAnyRole("USER", "ADMIN")
@@ -55,7 +56,6 @@ public class SecurityConfiguration{
         return (web) -> web.ignoring().antMatchers(/*HttpMethod.GET,*/"../resources/**",  "/static/**", "/css/**", "/js/**", "/images/**","/vendor/**","/fonts/**");
    }
 
-    // create two users, admin and user
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 

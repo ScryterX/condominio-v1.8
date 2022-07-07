@@ -28,4 +28,6 @@ public class ParkingSpotDto implements Serializable {
     private final String apartment;
     @NotBlank
     private final String block;
+    @NotBlank
+    private final String contato;
 }
