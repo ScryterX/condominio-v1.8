@@ -18,7 +18,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-//@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/parking-spot")
 public class ParkingSpotController {
 
@@ -27,7 +27,7 @@ public class ParkingSpotController {
 
 
     @PostMapping
-    public ResponseEntity<Object> saveParkingSpot(@ModelAttribute @RequestBody @Valid ParkingSpotDto parkingSpotDto)
+    public ResponseEntity<Object> saveParkingSpot(@RequestBody @Valid ParkingSpotDto parkingSpotDto)
     {
         if(parkingSpotService.existsByLicensePlateCar(parkingSpotDto.getLicensePlateCar()))
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflito: Placa veicular já registrada");

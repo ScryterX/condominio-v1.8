@@ -13,6 +13,9 @@ import java.util.UUID;
 public class ParkingSpotModel {
     private static final long serialVersionUID = 1L;
 
+//    @Id
+//    @Column(name = "id", nullable = false)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
@@ -36,7 +39,4 @@ public class ParkingSpotModel {
     private String apartment;
     @Column(nullable = false, length = 30)
     private String block;
-    @Column(nullable = false, length = 30)
-    private String contato;
-
 }
