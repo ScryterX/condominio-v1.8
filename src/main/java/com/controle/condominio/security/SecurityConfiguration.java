@@ -38,8 +38,9 @@ public class SecurityConfiguration{
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 //        http.authorizeHttpRequests((authz) -> authz.anyRequest().authenticated()).httpBasic(withDefaults());
 
-        http.cors().and().csrf().disable()
+        http.cors().and()
                 .formLogin().loginPage("/login").permitAll().and()
+                .csrf().disable()
                 .httpBasic().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/parking-spot").hasAnyRole("USER", "ADMIN")
